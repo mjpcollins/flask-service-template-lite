@@ -11,4 +11,4 @@ RUN pwd
 RUN ls -lah
 RUN pip install -r requirements.txt
 RUN python3 tests/unittests_utils/unittest_runner.py
-ENTRYPOINT python3 app.py
+ENTRYPOINT ["python3",  "app.py"]
