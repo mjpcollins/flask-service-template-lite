@@ -6,7 +6,8 @@ ENV PYTHONUNBUFFERED True
 ENV APP_HOME /app
 WORKDIR $APP_HOME
 COPY . ./
-RUN cd app
+RUN pwd
+RUN ls -lah
 RUN pip install -r requirements.txt
 RUN python3 tests/unittests_utils/unittest_runner.py
 ENTRYPOINT ['python3']
