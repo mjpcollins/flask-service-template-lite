@@ -10,7 +10,7 @@ COPY . ./
 RUN pwd
 RUN ls -lah
 RUN pip install -r requirements.txt
-RUN python3 tests/unittests_utils/unittest_runner.py
+RUN pytest -v
 
 # Scale up the workers / threads to requirements
 CMD exec gunicorn --bind :$PORT --workers 1 --threads 4 --timeout 0 app:app
